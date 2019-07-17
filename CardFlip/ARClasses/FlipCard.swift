@@ -15,21 +15,26 @@ fileprivate extension UIColor {
   }
 }
 
-class FlipCard: Entity, HasCollision {
+class FlipCard: Entity, HasModel, HasCollision {
   let cardID: Int
   var isFaceUp = false
   init(color: UIColor, id: Int) {
     self.cardID = id
     super.init()
-    let coloredFace = ModelEntity(mesh: MeshResource.generatePlane(width: 1, depth: 1), materials: [color.toMaterial()])
+    let coloredFace = ModelEntity(
+      mesh: MeshResource.generatePlane(width: 1, depth: 1),
+      materials: [color.toMaterial()]
+    )
     coloredFace.orientation = .init(angle: .pi, axis: [1,0,0])
     coloredFace.position.y = -0.101
 
     self.addChild(coloredFace)
-    self.components[ModelComponent.self] = ModelComponent(
+    self.components[ModelComponent] = ModelComponent(
       mesh: .generateBox(size: [1, 0.2, 1]),
       materials: [UIColor.gray.toMaterial()])
-    self.components[CollisionComponent.self] = CollisionComponent(shapes: [ShapeResource.generateBox(size: [1,0.2,1])])
+    self.components[CollisionComponent] = CollisionComponent(
+      shapes: [ShapeResource.generateBox(size: [1,0.2,1])]
+    )
   }
 
   required init() {

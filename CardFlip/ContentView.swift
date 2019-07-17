@@ -20,9 +20,7 @@ struct ContentView : View {
 
 struct RealityIntegratedViewController: UIViewControllerRepresentable {
   func makeUIViewController(
-    context: UIViewControllerRepresentableContext<
-    RealityIntegratedViewController
-    >
+    context: UIViewControllerRepresentableContext<RealityIntegratedViewController>
     ) -> RealityViewController {
     RealityViewController()
   }
@@ -42,10 +40,8 @@ struct RealityIntegratedViewController: UIViewControllerRepresentable {
 struct ARViewContainer: UIViewRepresentable {
 
   func makeUIView(context: Context) -> ARView {
-
     let arView = ARView(frame: .zero)
 
-    // Load the "Box" scene from the "Experience" Reality File
     if let flipTable = try? FlipTable(dimensions: [2,2]) {
       flipTable.minimumBounds = [0.3,0.3]
       arView.scene.anchors.append(flipTable)
@@ -56,7 +52,6 @@ struct ARViewContainer: UIViewRepresentable {
     return arView
 
   }
-
   func updateUIView(_ uiView: ARView, context: Context) {}
 
 }

@@ -39,7 +39,7 @@ class FlipTable: Entity, HasAnchoring {
         minimumBounds: bounds)
       let anchorComponent = AnchoringComponent(anchorPlane)
 
-      self.components[AnchoringComponent.self] = anchorComponent
+      self.components[AnchoringComponent] = anchorComponent
       let maxDim = dimensions.max()
       let minBound = bounds.min()
       self.scale = .init(repeating: minBound / Float(maxDim))
@@ -73,8 +73,6 @@ class FlipTable: Entity, HasAnchoring {
         self.addChild(newCard)
       }
     }
-//    self.minimumBounds = size
-
   }
 
   required init() {

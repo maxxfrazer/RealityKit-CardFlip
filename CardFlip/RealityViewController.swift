@@ -22,13 +22,11 @@ class RealityViewController: UIViewController, ARSessionDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupARView()
-    //    setupGameScene()
-        setupCoachingOverlay()
+    setupCoachingOverlay()
     setupGestures()
   }
 
   func coachingFinished() {
-    self.setupGameScene()
   }
 
   func setupARView() {
@@ -36,9 +34,6 @@ class RealityViewController: UIViewController, ARSessionDelegate {
     arView.frame = self.view.bounds
     self.arView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     self.view.addSubview(arView)
-  }
-  
-  func setupGameScene() {
     // MARK: - Add FlipTable
     if let flipTable = try? FlipTable(dimensions: [4,4]) {
       flipTable.minimumBounds = [0.5,0.5]
@@ -46,6 +41,5 @@ class RealityViewController: UIViewController, ARSessionDelegate {
     } else {
       fatalError("couldnt make flip table, check parameters")
     }
-
   }
 }
