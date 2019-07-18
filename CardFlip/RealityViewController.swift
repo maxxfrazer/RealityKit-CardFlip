@@ -27,13 +27,6 @@ class RealityViewController: UIViewController, ARSessionDelegate {
   }
 
   func coachingFinished() {
-  }
-
-  func setupARView() {
-    self.modalPresentationStyle = .fullScreen
-    arView.frame = self.view.bounds
-    self.arView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    self.view.addSubview(arView)
     // MARK: - Add FlipTable
     if let flipTable = try? FlipTable(dimensions: [4,4]) {
       flipTable.minimumBounds = [0.5,0.5]
@@ -41,5 +34,15 @@ class RealityViewController: UIViewController, ARSessionDelegate {
     } else {
       fatalError("couldnt make flip table, check parameters")
     }
+  }
+
+  func setupARView() {
+    self.modalPresentationStyle = .fullScreen
+    arView.frame = self.view.bounds
+    self.arView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    self.view.addSubview(arView)
+    let config = ARWorldTrackingConfiguration()
+    config.planeDetection = .horizontal
+    self.arView.session.run(config, options: [])
   }
 }

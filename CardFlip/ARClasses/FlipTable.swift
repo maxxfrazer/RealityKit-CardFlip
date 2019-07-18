@@ -55,15 +55,12 @@ class FlipTable: Entity, HasAnchoring {
     }
     super.init()
     let colorsToUse = FlipTable.availableColors[0...((cardCount - 1) / 2)]
-    print(colorsToUse.count)
     let allIDs = Array(0..<cardCount).map { $0 / 2 }.shuffled()
     for row in 0..<dimensions[0] {
       for col in 0..<dimensions[1] {
         let positionIndex = row * dimensions[0] + col
         let colorIndex = allIDs[positionIndex]
-        print(colorIndex)
         let newCard = FlipCard(color: colorsToUse[colorIndex], id: colorIndex)
-//        newCard.scale.x = 0.5
         newCard.scale = [0.9, 0.9, 0.9]
         newCard.position = [
           Float(col) - Float(dimensions[1]) / 2,
