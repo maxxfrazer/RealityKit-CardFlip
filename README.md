@@ -1,4 +1,4 @@
-### RealityKit CardFlip
+# RealityKit CardFlip
 
 Example code for Apple's new AR framework RealityKit, demonstrating the following things:
 
@@ -11,15 +11,20 @@ Example code for Apple's new AR framework RealityKit, demonstrating the followin
 - Animations
 - AR Coaching
 
-TODO:
+### TODO:
 - [ ] Fix Animations
 - [ ] Add game feedback
   - [ ] Score counter
   - [ ] Game complete callback
 - [ ] Audio Playback
 
+---
+Following the RealityKit examples from this keynote, as the code used has not yet been released:
 
-Wishlist for RealityKit:
+[Building Apps with RealityKit](https://developer.apple.com/videos/play/wwdc2019/605/)
+
+---
+### Wishlist for RealityKit:
 - Entity callback when anchored in the scene
 - Particles
 - Custom Mesh Generation
