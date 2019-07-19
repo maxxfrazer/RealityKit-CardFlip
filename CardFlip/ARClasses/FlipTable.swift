@@ -27,6 +27,8 @@ class FlipTable: Entity, HasAnchoring {
     .brown,
     .systemPink,
   ]
+  /// After 2 non matching cards are flipped, they will flip back to non-reveal state after this time in seconds
+  var flipBackTimeout = 0.5
   let dimensions: SIMD2<Int>
   var minimumBounds: SIMD2<Float>? = nil {
     didSet {
@@ -46,6 +48,7 @@ class FlipTable: Entity, HasAnchoring {
     }
   }
   init(dimensions: SIMD2<Int>) throws {
+    CardComponent.self.registerComponent()
     self.dimensions = dimensions
     let cardCount = dimensions[0] * dimensions[1]
     if (cardCount % 2) == 1 {
@@ -63,9 +66,9 @@ class FlipTable: Entity, HasAnchoring {
         let newCard = FlipCard(color: colorsToUse[colorIndex], id: colorIndex)
         newCard.scale = [0.9, 0.9, 0.9]
         newCard.position = [
-          Float(col) - Float(dimensions[1]) / 2,
+          Float(col) - Float(dimensions[1] - 1) / 2,
           0,
-          Float(row) - Float(dimensions[0]) / 2
+          Float(row) - Float(dimensions[0] - 1) / 2
         ]
         self.addChild(newCard)
       }

@@ -26,36 +26,22 @@ extension RealityViewController: UIGestureRecognizerDelegate {
       // not a FlipCard
       return
     }
-    if !boardUnit.isFaceUp {
+    if !boardUnit.isRevealed {
       self.canTap = false
-      var boardTransform = boardUnit.transform
-      boardTransform.rotation = .init(angle: .pi, axis: [1,0,0])
 
-      // TODO: Find why the animations occur instantly, rather than in duration
-      boardUnit.move(
-        to: boardTransform,
-        relativeTo: boardUnit.parent,
-        duration: 0.3,
-        timingFunction: .easeInOut
-      )
+      boardUnit.reveal()
 
-      boardUnit.isFaceUp = true
       if self.currentlyFlipped == nil {
         self.currentlyFlipped = boardUnit
         self.canTap = true
-      } else if let currentlyFlipped = self.currentlyFlipped, currentlyFlipped.cardID != boardUnit.cardID {
+      } else if let currentlyFlipped = self.currentlyFlipped, !currentlyFlipped.matches(with: boardUnit) {
         // not a match
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-          boardTransform.rotation = .init(angle: 0, axis: [1, 0, 0])
-          boardUnit.move(to: boardTransform, relativeTo: boardUnit.parent, duration: 0.3, timingFunction: .easeInOut)
-          var firstCardTransform = currentlyFlipped.transform
-          firstCardTransform.rotation = .init(angle: 0, axis: [1, 0, 0])
-          currentlyFlipped.move(to: firstCardTransform, relativeTo: boardUnit.parent, duration: 0.3, timingFunction: .easeInOut).completionHandler {
+        DispatchQueue.main.asyncAfter(deadline: .now() + (self.flipTable?.flipBackTimeout ?? 0.5)) {
+          boardUnit.hide()
+          currentlyFlipped.hide(completion: {
             self.canTap = true
-            boardUnit.isFaceUp = false
-            self.currentlyFlipped?.isFaceUp = false
             self.currentlyFlipped = nil
-          }
+          })
         }
       } else {
         // score increase by 2

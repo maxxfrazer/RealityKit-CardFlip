@@ -16,6 +16,7 @@ class RealityViewController: UIViewController, ARSessionDelegate {
   var touchStartedOn: FlipCard? = nil
   var currentlyFlipped: FlipCard? = nil
   var canTap = true
+  var flipTable: FlipTable? = nil
 
   let coachingOverlay = ARCoachingOverlayView()
 
@@ -29,6 +30,7 @@ class RealityViewController: UIViewController, ARSessionDelegate {
   func coachingFinished() {
     // MARK: - Add FlipTable
     if let flipTable = try? FlipTable(dimensions: [4,4]) {
+      self.flipTable = flipTable
       flipTable.minimumBounds = [0.5,0.5]
       arView.scene.anchors.append(flipTable)
     } else {
@@ -44,5 +46,6 @@ class RealityViewController: UIViewController, ARSessionDelegate {
     let config = ARWorldTrackingConfiguration()
     config.planeDetection = .horizontal
     self.arView.session.run(config, options: [])
+    CardComponent.registerComponent()
   }
 }
