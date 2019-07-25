@@ -8,21 +8,21 @@
 
 import SwiftUI
 
-extension RealityViewController: UIGestureRecognizerDelegate {
+extension CardFlipARView {
 
   /// Add the tap gesture recogniser
   func setupGestures() {
     let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
-    self.arView.addGestureRecognizer(tap)
+    self.addGestureRecognizer(tap)
   }
 
   /// Handle taps on the screen, currently exclusively used for flipping cards
   @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
-    guard let touchInView = sender?.location(in: self.arView), self.canTap else {
+    guard let touchInView = sender?.location(in: self), self.canTap else {
       return
     }
     /// If we don't have any more left, do not add
-    guard let boardUnit = self.arView.entity(at: touchInView) as? FlipCard else {
+    guard let boardUnit = self.entity(at: touchInView) as? FlipCard else {
       // not a FlipCard
       return
     }

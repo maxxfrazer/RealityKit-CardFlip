@@ -9,8 +9,9 @@
 import RealityKit
 import ARKit
 
-class RealityViewController: UIViewController, ARSessionDelegate {
-  let arView = ARView(frame: .zero)
+class CardFlipARView: ARView {
+  let coachingOverlay = ARCoachingOverlayView()
+  var tableAdded = false
 
   // MARK: - Touch Gesture Variables
   var touchStartedOn: FlipCard? = nil
@@ -18,34 +19,17 @@ class RealityViewController: UIViewController, ARSessionDelegate {
   var canTap = true
   var flipTable: FlipTable? = nil
 
-  let coachingOverlay = ARCoachingOverlayView()
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    setupARView()
-    setupCoachingOverlay()
-    setupGestures()
-  }
-
-  func coachingFinished() {
-    // MARK: - Add FlipTable
+  /// Add the FlipTable object
+  func addFlipTable() {
     if let flipTable = try? FlipTable(dimensions: [4,4]) {
-      self.flipTable = flipTable
+      if tableAdded {
+        return
+      }
+      tableAdded = true
       flipTable.minimumBounds = [0.5,0.5]
-      arView.scene.anchors.append(flipTable)
+      self.scene.anchors.append(flipTable)
     } else {
-      fatalError("couldnt make flip table, check parameters")
+      print("couldnt make flip table")
     }
-  }
-
-  func setupARView() {
-    self.modalPresentationStyle = .fullScreen
-    arView.frame = self.view.bounds
-    self.arView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    self.view.addSubview(arView)
-    let config = ARWorldTrackingConfiguration()
-    config.planeDetection = .horizontal
-    self.arView.session.run(config, options: [])
-    CardComponent.registerComponent()
   }
 }

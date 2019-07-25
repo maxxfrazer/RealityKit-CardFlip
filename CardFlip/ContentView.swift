@@ -12,47 +12,26 @@ import ARKit
 
 struct ContentView : View {
   var body: some View {
-    RealityIntegratedViewController()
-      .edgesIgnoringSafeArea(.all)
-//            return ARViewContainer().edgesIgnoringSafeArea(.all)
+    return ARViewContainer().edgesIgnoringSafeArea(.all)
   }
 }
-
-struct RealityIntegratedViewController: UIViewControllerRepresentable {
-  func makeUIViewController(
-    context: UIViewControllerRepresentableContext<RealityIntegratedViewController>
-    ) -> RealityViewController {
-    RealityViewController()
-  }
-
-  //  typealias UIViewControllerType = RealityViewController
-  func updateUIViewController(
-    _ uiViewController: RealityViewController,
-    context: UIViewControllerRepresentableContext<
-    RealityIntegratedViewController
-    >
-    ) {
-  }
-}
-
 
 /// This view is not currently used, instead the struct above is
 struct ARViewContainer: UIViewRepresentable {
+  func makeUIView(context: Context) -> CardFlipARView {
 
-  func makeUIView(context: Context) -> ARView {
-    let arView = ARView(frame: .zero)
+    let arView = CardFlipARView(frame: .zero)
+    let config = ARWorldTrackingConfiguration()
+    config.planeDetection = [.horizontal]
+    arView.session.run(config, options: [])
+    CardComponent.registerComponent()
 
-    if let flipTable = try? FlipTable(dimensions: [2,2]) {
-      flipTable.minimumBounds = [0.3,0.3]
-      arView.scene.anchors.append(flipTable)
-    } else {
-      print("couldnt make flip table")
-    }
-
+    arView.addCoaching()
+    arView.setupGestures()
     return arView
 
   }
-  func updateUIView(_ uiView: ARView, context: Context) {}
+  func updateUIView(_ uiView: CardFlipARView, context: Context) {}
 
 }
 
