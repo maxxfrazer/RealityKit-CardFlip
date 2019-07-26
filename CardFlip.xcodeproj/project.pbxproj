@@ -18,6 +18,7 @@
 		F390D54222DE8BF800D21945 /* FlipTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F390D54122DE8BF800D21945 /* FlipTable.swift */; };
 		F3CFE76C22DEA4000071C3AD /* RealityViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFE76B22DEA4000071C3AD /* RealityViewController+Gestures.swift */; };
 		F3CFE77022DFA34E0071C3AD /* RealityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFE76F22DFA34E0071C3AD /* RealityViewController.swift */; };
+		F3F5A14322E996D200F529DB /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A14222E996D200F529DB /* CardComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		F390D54122DE8BF800D21945 /* FlipTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipTable.swift; sourceTree = "<group>"; };
 		F3CFE76B22DEA4000071C3AD /* RealityViewController+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealityViewController+Gestures.swift"; sourceTree = "<group>"; };
 		F3CFE76F22DFA34E0071C3AD /* RealityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityViewController.swift; sourceTree = "<group>"; };
+		F3F5A14222E996D200F529DB /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardComponent.swift; path = ../../../../../../../../System/Volumes/Data/Users/maxcobb/Documents/Code/Personal/CardFlip/CardFlip/ARClasses/CardComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				F390D53F22DE88BA00D21945 /* FlipCard.swift */,
+				F3F5A14222E996D200F529DB /* CardComponent.swift */,
 				F390D54122DE8BF800D21945 /* FlipTable.swift */,
 			);
 			path = ARClasses;
@@ -231,6 +234,7 @@
 				F390D54022DE88BA00D21945 /* FlipCard.swift in Sources */,
 				F3CFE77022DFA34E0071C3AD /* RealityViewController.swift in Sources */,
 				F390D54222DE8BF800D21945 /* FlipTable.swift in Sources */,
+				F3F5A14322E996D200F529DB /* CardComponent.swift in Sources */,
 				F390D51022DE886A00D21945 /* AppDelegate.swift in Sources */,
 				F31E88DF22DFA6CE00E4B6A7 /* RealityViewController+Coaching.swift in Sources */,
 				F3CFE76C22DEA4000071C3AD /* RealityViewController+Gestures.swift in Sources */,

@@ -23,7 +23,7 @@ extension CardFlipARView {
     }
     /// If we don't have any more left, do not add
     guard let boardUnit = self.entity(at: touchInView) as? FlipCard else {
-      // not a FlipCard
+      // not a FlipCard or nothing hit
       return
     }
     if !boardUnit.isRevealed {

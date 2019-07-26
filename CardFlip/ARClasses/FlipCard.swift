@@ -9,30 +9,17 @@
 import RealityKit
 import UIKit
 
-struct CardComponent: Component, Codable {
-  var isRevealed = false
-  var id: Int
-}
-
 fileprivate extension UIColor {
   func toMaterial(isMetallic: Bool = false) -> Material {
     return SimpleMaterial.init(color: self, isMetallic: isMetallic)
   }
 }
 
-class FlipCard: Entity, HasModel, HasCollision {
+class FlipCard: Entity, HasModel, HasCollision, HasCard {
 
-  public var card: CardComponent {
+  var card: CardComponent {
     get { components[CardComponent] ?? CardComponent(id: -1) }
     set { components[CardComponent] = newValue }
-  }
-
-  // The next 2 are not necessary, I just prefer to have them
-  var cardID: Int {
-    self.card.id
-  }
-  var isRevealed: Bool {
-    return self.card.isRevealed
   }
 
   /// Initialise a FlipCard in the scene
