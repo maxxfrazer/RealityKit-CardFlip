@@ -1,5 +1,5 @@
 //
-//  RealityViewController.swift
+//  CardFlipARView.swift
 //  CardFlip
 //
 //  Created by Max Cobb on 7/17/19.

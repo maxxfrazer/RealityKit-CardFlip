@@ -1,5 +1,5 @@
 //
-//  RealityViewController+Coaching.swift
+//  CardFlipARView+Coaching.swift
 //  CardFlip
 //
 //  Created by Max Cobb on 7/17/19.

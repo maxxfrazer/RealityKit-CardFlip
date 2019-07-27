@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F31E88DF22DFA6CE00E4B6A7 /* RealityViewController+Coaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31E88DE22DFA6CE00E4B6A7 /* RealityViewController+Coaching.swift */; };
+		F31E88DF22DFA6CE00E4B6A7 /* CardFlipARView+Coaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31E88DE22DFA6CE00E4B6A7 /* CardFlipARView+Coaching.swift */; };
 		F390D51022DE886A00D21945 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F390D50F22DE886A00D21945 /* AppDelegate.swift */; };
 		F390D51422DE886A00D21945 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F390D51322DE886A00D21945 /* ContentView.swift */; };
 		F390D51622DE886A00D21945 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F390D51522DE886A00D21945 /* Assets.xcassets */; };
@@ -16,8 +16,8 @@
 		F390D52722DE886A00D21945 /* CardFlipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F390D52622DE886A00D21945 /* CardFlipTests.swift */; };
 		F390D54022DE88BA00D21945 /* FlipCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F390D53F22DE88BA00D21945 /* FlipCard.swift */; };
 		F390D54222DE8BF800D21945 /* FlipTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F390D54122DE8BF800D21945 /* FlipTable.swift */; };
-		F3CFE76C22DEA4000071C3AD /* RealityViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFE76B22DEA4000071C3AD /* RealityViewController+Gestures.swift */; };
-		F3CFE77022DFA34E0071C3AD /* RealityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFE76F22DFA34E0071C3AD /* RealityViewController.swift */; };
+		F3CFE76C22DEA4000071C3AD /* CardFlipARView+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFE76B22DEA4000071C3AD /* CardFlipARView+Gestures.swift */; };
+		F3CFE77022DFA34E0071C3AD /* CardFlipARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFE76F22DFA34E0071C3AD /* CardFlipARView.swift */; };
 		F3F5A14322E996D200F529DB /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A14222E996D200F529DB /* CardComponent.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F31E88DE22DFA6CE00E4B6A7 /* RealityViewController+Coaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealityViewController+Coaching.swift"; sourceTree = "<group>"; };
+		F31E88DE22DFA6CE00E4B6A7 /* CardFlipARView+Coaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardFlipARView+Coaching.swift"; sourceTree = "<group>"; };
 		F390D50C22DE886A00D21945 /* CardFlip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardFlip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F390D50F22DE886A00D21945 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F390D51322DE886A00D21945 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,8 +45,8 @@
 		F390D52822DE886A00D21945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F390D53F22DE88BA00D21945 /* FlipCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipCard.swift; sourceTree = "<group>"; };
 		F390D54122DE8BF800D21945 /* FlipTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipTable.swift; sourceTree = "<group>"; };
-		F3CFE76B22DEA4000071C3AD /* RealityViewController+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealityViewController+Gestures.swift"; sourceTree = "<group>"; };
-		F3CFE76F22DFA34E0071C3AD /* RealityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityViewController.swift; sourceTree = "<group>"; };
+		F3CFE76B22DEA4000071C3AD /* CardFlipARView+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardFlipARView+Gestures.swift"; sourceTree = "<group>"; };
+		F3CFE76F22DFA34E0071C3AD /* CardFlipARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlipARView.swift; sourceTree = "<group>"; };
 		F3F5A14222E996D200F529DB /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardComponent.swift; path = ../../../../../../../../System/Volumes/Data/Users/maxcobb/Documents/Code/Personal/CardFlip/CardFlip/ARClasses/CardComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,9 +101,9 @@
 			children = (
 				F390D50F22DE886A00D21945 /* AppDelegate.swift */,
 				F390D51322DE886A00D21945 /* ContentView.swift */,
-				F3CFE76F22DFA34E0071C3AD /* RealityViewController.swift */,
-				F31E88DE22DFA6CE00E4B6A7 /* RealityViewController+Coaching.swift */,
-				F3CFE76B22DEA4000071C3AD /* RealityViewController+Gestures.swift */,
+				F3CFE76F22DFA34E0071C3AD /* CardFlipARView.swift */,
+				F31E88DE22DFA6CE00E4B6A7 /* CardFlipARView+Coaching.swift */,
+				F3CFE76B22DEA4000071C3AD /* CardFlipARView+Gestures.swift */,
 				F34BA60D22DFA47000BA4040 /* ARClasses */,
 				F390D51522DE886A00D21945 /* Assets.xcassets */,
 				F390D51A22DE886A00D21945 /* LaunchScreen.storyboard */,
@@ -232,12 +232,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F390D54022DE88BA00D21945 /* FlipCard.swift in Sources */,
-				F3CFE77022DFA34E0071C3AD /* RealityViewController.swift in Sources */,
+				F3CFE77022DFA34E0071C3AD /* CardFlipARView.swift in Sources */,
 				F390D54222DE8BF800D21945 /* FlipTable.swift in Sources */,
 				F3F5A14322E996D200F529DB /* CardComponent.swift in Sources */,
 				F390D51022DE886A00D21945 /* AppDelegate.swift in Sources */,
-				F31E88DF22DFA6CE00E4B6A7 /* RealityViewController+Coaching.swift in Sources */,
-				F3CFE76C22DEA4000071C3AD /* RealityViewController+Gestures.swift in Sources */,
+				F31E88DF22DFA6CE00E4B6A7 /* CardFlipARView+Coaching.swift in Sources */,
+				F3CFE76C22DEA4000071C3AD /* CardFlipARView+Gestures.swift in Sources */,
 				F390D51422DE886A00D21945 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

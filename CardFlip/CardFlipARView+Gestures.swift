@@ -1,5 +1,5 @@
 //
-//  RealityViewController+Gestures.swift
+//  CardFlipARView+Gestures.swift
 //  CardFlip
 //
 //  Created by Max Cobb on 7/18/19.
