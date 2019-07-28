@@ -22,7 +22,8 @@ extension HasCard where Self: Entity {
     self.card.id
   }
   var isRevealed: Bool {
-    return self.card.isRevealed
+    get { self.card.isRevealed }
+    set { self.card.isRevealed = newValue }
   }
 }
 
@@ -33,11 +34,7 @@ extension HasCard where Self: Entity {
   /// Flip the card to reveal the underside
   /// - Parameter completion: Any actions you want to happen upon completion
   mutating func reveal(completion: (() -> Void)? = nil) {
-    // TODO: These 3 lines are quite cumbersome, would like to change
-    var myCard = card
-    myCard.isRevealed = true
-    self.card = myCard
-
+    card.isRevealed = true
     var transform = self.transform
     transform.rotation = simd_quatf(angle: .pi, axis: [1, 0, 0])
     move(to: transform, relativeTo: parent, duration: 0.25, timingFunction: .easeOut).completionHandler {
@@ -45,16 +42,11 @@ extension HasCard where Self: Entity {
     }
   }
   mutating func hide(completion: (() -> Void)? = nil) {
-    var cSelf: HasCard? = self
+    var cSelf = self
     var transform = self.transform
     transform.rotation = simd_quatf(angle: 0, axis: [1, 0, 0])
     move(to: transform, relativeTo: parent, duration: 0.25, timingFunction: .easeOut).completionHandler {
-      guard var myCard = cSelf?.card else {
-        completion?()
-        return
-      }
-      myCard.isRevealed = false
-      cSelf?.card = myCard
+      cSelf.isRevealed = false
       completion?()
     }
   }
