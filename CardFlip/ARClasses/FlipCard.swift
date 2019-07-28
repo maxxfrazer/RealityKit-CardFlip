@@ -54,28 +54,3 @@ class FlipCard: Entity, HasModel, HasCollision, HasCard {
     return self.cardID == match.cardID
   }
 }
-
-// MARK: - FlipCard Animations
-extension FlipCard {
-  // TODO: Find why the animations occur instantly, rather than in duration
-  
-  /// Flip the card to reveal the underside
-  /// - Parameter completion: Any actions you want to happen upon completion
-  func reveal(completion: (() -> Void)? = nil) {
-    card.isRevealed = true
-    var transform = self.transform
-    transform.rotation = simd_quatf(angle: .pi, axis: [1, 0, 0])
-    move(to: transform, relativeTo: parent, duration: 0.25, timingFunction: .easeOut).completionHandler {
-      completion?()
-    }
-  }
-  func hide(completion: (() -> Void)? = nil) {
-    card.isRevealed = true
-    var transform = self.transform
-    transform.rotation = simd_quatf(angle: 0, axis: [1, 0, 0])
-    move(to: transform, relativeTo: parent, duration: 0.25, timingFunction: .easeOut).completionHandler {
-      self.card.isRevealed = false
-      completion?()
-    }
-  }
-}

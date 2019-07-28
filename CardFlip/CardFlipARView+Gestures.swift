@@ -22,7 +22,7 @@ extension CardFlipARView {
       return
     }
     /// If we don't have any more left, do not add
-    guard let boardUnit = self.entity(at: touchInView) as? FlipCard else {
+    guard var boardUnit = self.entity(at: touchInView) as? FlipCard else {
       // not a FlipCard or nothing hit
       return
     }
@@ -34,7 +34,7 @@ extension CardFlipARView {
       if self.currentlyFlipped == nil {
         self.currentlyFlipped = boardUnit
         self.canTap = true
-      } else if let currentlyFlipped = self.currentlyFlipped, !currentlyFlipped.matches(with: boardUnit) {
+      } else if var currentlyFlipped = self.currentlyFlipped, !currentlyFlipped.matches(with: boardUnit) {
         // not a match
         DispatchQueue.main.asyncAfter(deadline: .now() + (self.flipTable?.flipBackTimeout ?? 0.5)) {
           boardUnit.hide()
