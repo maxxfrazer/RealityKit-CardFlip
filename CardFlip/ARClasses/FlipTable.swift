@@ -14,9 +14,7 @@ enum FlipTableError: Error {
   case dimensionsTooLarge
 }
 
-
-
-class FlipTable: Entity, HasAnchoring {
+class FlipTable: Entity, HasAnchoring, HasCollision {
   static var availableColors: [UIColor] = [
     .red,
     .orange,
@@ -42,6 +40,7 @@ class FlipTable: Entity, HasAnchoring {
       let anchorComponent = AnchoringComponent(anchorPlane)
 
       self.components[AnchoringComponent] = anchorComponent
+//      self.components[CollisionComponent] = CollisionComponent(shapes: [.generateBox(size: [1,0.3,1])])
       let maxDim = dimensions.max()
       let minBound = bounds.min()
       self.scale = .init(repeating: minBound / Float(maxDim))

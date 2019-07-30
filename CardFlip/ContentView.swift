@@ -28,6 +28,7 @@ struct ARViewContainer: UIViewRepresentable {
 
     arView.addCoaching()
     arView.setupGestures()
+    arView.session.delegate = arView
     return arView
   }
   func updateUIView(_ uiView: CardFlipARView, context: Context) {}

@@ -18,6 +18,29 @@ extension CardFlipARView {
 
   /// Handle taps on the screen, currently exclusively used for flipping cards
   @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+    switch self.status {
+    case .positioning:
+      tapWhenPositioning(sender)
+    case .playing:
+      cardFlipAction(sender)
+    default:
+      return
+    }
+  }
+
+  func tapWhenPositioning(_ sender: UITapGestureRecognizer? = nil) {
+    guard let touchInView = sender?.location(in: self), self.canTap else {
+      return
+    }
+    /// If we don't have any more left, do not add
+    guard let buttonTapped = self.entity(at: touchInView) as? ARButton else {
+      // not a FlipCard or nothing hit
+      return
+    }
+    buttonTapped.tapAction?()
+  }
+
+  func cardFlipAction(_ sender: UITapGestureRecognizer? = nil) {
     guard let touchInView = sender?.location(in: self), self.canTap else {
       return
     }
@@ -49,5 +72,6 @@ extension CardFlipARView {
         self.canTap = true
       }
     }
+
   }
 }
