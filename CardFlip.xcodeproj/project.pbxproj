@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F31E88DF22DFA6CE00E4B6A7 /* CardFlipARView+Coaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31E88DE22DFA6CE00E4B6A7 /* CardFlipARView+Coaching.swift */; };
+		F32CA1C422F2099B008B33FA /* CardFlipARView+GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CA1C322F2099B008B33FA /* CardFlipARView+GameStatus.swift */; };
+		F32CA1C622F209D8008B33FA /* CardFlipARView+ARSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CA1C522F209D8008B33FA /* CardFlipARView+ARSession.swift */; };
 		F38DF9BD22EDFFD500DC328A /* HasTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38DF9BC22EDFFD500DC328A /* HasTap.swift */; };
 		F38DF9BF22EE020400DC328A /* ARButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38DF9BE22EE020400DC328A /* ARButton.swift */; };
 		F390D51022DE886A00D21945 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F390D50F22DE886A00D21945 /* AppDelegate.swift */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		F31E88DE22DFA6CE00E4B6A7 /* CardFlipARView+Coaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardFlipARView+Coaching.swift"; sourceTree = "<group>"; };
+		F32CA1C322F2099B008B33FA /* CardFlipARView+GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CardFlipARView+GameStatus.swift"; path = "../../../../../../../System/Volumes/Data/Users/maxcobb/Documents/Code/Personal/CardFlip/CardFlip/CardFlipARView+GameStatus.swift"; sourceTree = "<group>"; };
+		F32CA1C522F209D8008B33FA /* CardFlipARView+ARSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CardFlipARView+ARSession.swift"; path = "../../../../../../../System/Volumes/Data/Users/maxcobb/Documents/Code/Personal/CardFlip/CardFlip/CardFlipARView+ARSession.swift"; sourceTree = "<group>"; };
 		F38DF9BC22EDFFD500DC328A /* HasTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HasTap.swift; path = ../../../../../../../../System/Volumes/Data/Users/maxcobb/Documents/Code/Personal/CardFlip/CardFlip/ARClasses/HasTap.swift; sourceTree = "<group>"; };
 		F38DF9BE22EE020400DC328A /* ARButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARButton.swift; path = ../../../../../../../../System/Volumes/Data/Users/maxcobb/Documents/Code/Personal/CardFlip/CardFlip/ARClasses/ARButton.swift; sourceTree = "<group>"; };
 		F390D50C22DE886A00D21945 /* CardFlip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardFlip.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +112,8 @@
 				F390D50F22DE886A00D21945 /* AppDelegate.swift */,
 				F390D51322DE886A00D21945 /* ContentView.swift */,
 				F3CFE76F22DFA34E0071C3AD /* CardFlipARView.swift */,
+				F32CA1C522F209D8008B33FA /* CardFlipARView+ARSession.swift */,
+				F32CA1C322F2099B008B33FA /* CardFlipARView+GameStatus.swift */,
 				F31E88DE22DFA6CE00E4B6A7 /* CardFlipARView+Coaching.swift */,
 				F3CFE76B22DEA4000071C3AD /* CardFlipARView+Gestures.swift */,
 				F34BA60D22DFA47000BA4040 /* ARClasses */,
@@ -238,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F390D54022DE88BA00D21945 /* FlipCard.swift in Sources */,
+				F32CA1C422F2099B008B33FA /* CardFlipARView+GameStatus.swift in Sources */,
 				F38DF9BD22EDFFD500DC328A /* HasTap.swift in Sources */,
 				F3CFE77022DFA34E0071C3AD /* CardFlipARView.swift in Sources */,
 				F390D54222DE8BF800D21945 /* FlipTable.swift in Sources */,
@@ -246,6 +253,7 @@
 				F31E88DF22DFA6CE00E4B6A7 /* CardFlipARView+Coaching.swift in Sources */,
 				F3CFE76C22DEA4000071C3AD /* CardFlipARView+Gestures.swift in Sources */,
 				F38DF9BF22EE020400DC328A /* ARButton.swift in Sources */,
+				F32CA1C622F209D8008B33FA /* CardFlipARView+ARSession.swift in Sources */,
 				F390D51422DE886A00D21945 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
