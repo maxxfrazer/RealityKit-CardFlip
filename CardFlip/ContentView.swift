@@ -22,7 +22,7 @@ struct ARViewContainer: UIViewRepresentable {
 
     let arView = CardFlipARView(frame: .zero)
     let config = ARWorldTrackingConfiguration()
-    config.planeDetection = [.horizontal]
+    config.planeDetection = .horizontal
     arView.session.run(config, options: [])
     CardComponent.registerComponent()
 
