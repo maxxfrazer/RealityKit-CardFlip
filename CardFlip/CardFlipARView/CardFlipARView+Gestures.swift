@@ -68,8 +68,7 @@ extension CardFlipARView {
         }
       } else {
         // score increase by 2
-        self.currentlyFlipped = nil
-        self.canTap = true
+        cardFound()
       }
     }
 

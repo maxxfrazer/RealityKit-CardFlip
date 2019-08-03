@@ -12,6 +12,7 @@ enum GameStatus {
   case planeSearching
   case positioning
   case playing
+  case finished
 }
 
 extension CardFlipARView {

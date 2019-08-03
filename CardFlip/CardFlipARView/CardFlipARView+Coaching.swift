@@ -15,8 +15,9 @@ extension CardFlipARView: ARCoachingOverlayViewDelegate {
     self.coachingOverlay.session = self.session
     self.coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
-    /// - Tag: CoachingGoal
+    // MARK: CoachingGoal
     self.coachingOverlay.goal = .horizontalPlane
+    
     self.addSubview(self.coachingOverlay)
   }
   public func coachingOverlayViewDidDeactivate(_ coachingOverlayView: ARCoachingOverlayView) {

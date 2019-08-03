@@ -9,6 +9,14 @@
 import RealityKit
 import ARKit
 
+struct GameData {
+  var dimensions: SIMD2<Int> = [4,4]
+  var cardsFound: Int = 0
+  var totalCards: Int {
+    dimensions[0] * dimensions[1]
+  }
+}
+
 class CardFlipARView: ARView {
   let coachingOverlay = ARCoachingOverlayView()
   var tableAdded = false
@@ -39,9 +47,11 @@ class CardFlipARView: ARView {
   var confirmButton: ARButton?
   var installedGestures: [EntityGestureRecognizer] = []
 
+  var gameData = GameData()
+
   /// Add the FlipTable object
   func addFlipTable() {
-    if let flipTable = try? FlipTable(dimensions: [4,4]) {
+    if let flipTable = try? FlipTable(dimensions: gameData.dimensions) {
       if tableAdded {
         return
       }
@@ -52,5 +62,32 @@ class CardFlipARView: ARView {
     } else {
       print("couldnt make flip table")
     }
+  }
+  func cardFound() {
+    self.gameData.cardsFound += 2
+    if self.gameData.cardsFound == self.gameData.totalCards {
+      gameComplete()
+    } else {
+      self.currentlyFlipped = nil
+      self.canTap = true
+    }
+  }
+  func gameComplete() {
+    // TODO: Make make this nicer next, in many ways.
+    self.status = .finished
+    let finText = ModelEntity(
+      mesh: .generateText(
+        "Winner!",
+        extrusionDepth: 0.2,
+        font: .systemFont(ofSize: 0.5),
+        containerFrame: CGRect(
+          origin: .zero,
+          size: CGSize(width: 2, height: 1)),
+        alignment: .center,
+        lineBreakMode: .byWordWrapping
+      ), materials: [SimpleMaterial.init(color: .yellow, isMetallic: true)]
+    )
+    finText.position.y = 1
+    self.flipTable?.addChild(finText)
   }
 }
