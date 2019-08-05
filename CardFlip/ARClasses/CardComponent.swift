@@ -30,7 +30,7 @@ extension HasCard where Self: Entity {
 
 // MARK: - FlipCard Animations
 extension HasCard where Self: Entity {
-  // TODO: - Replace asyncAfters with AnimationEvents.PlaybackCompleted later
+  // TODO: - Replace asyncAfters with AnimationEvents.PlaybackTerminated later
 
   /// Flip the card to reveal the underside
   /// - Parameter completion: Any actions you want to happen upon completion
@@ -38,10 +38,11 @@ extension HasCard where Self: Entity {
     card.isRevealed = true
     var transform = self.transform
     transform.rotation = simd_quatf(angle: .pi, axis: [1, 0, 0])
-    move(to: transform, relativeTo: parent, duration: 0.25, timingFunction: .easeOut)
-      /*.completionHandler {
-      completion?()
-    }*/
+    let _ = move(to: transform, relativeTo: parent, duration: 0.25, timingFunction: .easeOut)
+//    self.scene?.subscribe(to: AnimationEvents.PlaybackTerminated.self, { (event) in
+//      guard event.playbackController == myEvent else { return }
+//      completion?()
+//    })
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
       completion?()
     }
@@ -50,11 +51,13 @@ extension HasCard where Self: Entity {
     var cSelf = self
     var transform = self.transform
     transform.rotation = simd_quatf(angle: 0, axis: [1, 0, 0])
-    move(to: transform, relativeTo: parent, duration: 0.25, timingFunction: .easeOut)
-      /*.completionHandler {
-      cSelf.isRevealed = false
-      completion?()
-    }*/
+    let _ = move(to: transform, relativeTo: parent, duration: 0.25, timingFunction: .easeOut)
+//    self.scene?.subscribe(to: AnimationEvents.PlaybackTerminated.self, { (event) in
+//      if (event.playbackController == myEvent) {
+//        cSelf.isRevealed = false
+//        completion?()
+//      }
+//    })
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
       cSelf.isRevealed = false
       completion?()
