@@ -8,6 +8,7 @@
 
 import RealityKit
 import UIKit
+import Combine
 
 fileprivate extension UIColor {
   func toMaterial(isMetallic: Bool = false) -> Material {
@@ -16,6 +17,9 @@ fileprivate extension UIColor {
 }
 
 class FlipCard: Entity, HasModel, HasCollision, HasCard {
+
+  var revealAnimationCallback: Cancellable?
+  var hideAnimationCallback: Cancellable?
 
   var card: CardComponent {
     get { components[CardComponent] ?? CardComponent(id: -1) }
