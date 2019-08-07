@@ -38,7 +38,6 @@ class FlipCard: Entity, HasModel, HasCollision, HasCard {
     )
     coloredFace.orientation = .init(angle: .pi, axis: [1,0,0])
     coloredFace.position.y = -0.101
-
     self.addChild(coloredFace)
     self.components[ModelComponent] = ModelComponent(
       mesh: .generateBox(size: [1, 0.2, 1]),

@@ -9,6 +9,7 @@
 import RealityKit
 
 enum GameStatus {
+  case initCoaching
   case planeSearching
   case positioning
   case playing

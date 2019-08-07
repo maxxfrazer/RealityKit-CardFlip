@@ -8,6 +8,7 @@
 
 import RealityKit
 import ARKit
+import Combine
 
 struct GameData {
   var dimensions: SIMD2<Int> = [4,4]
@@ -22,7 +23,7 @@ class CardFlipARView: ARView {
   var tableAdded = false
 
 
-  var status: GameStatus = .planeSearching {
+  var status: GameStatus = .initCoaching {
     didSet {
       switch oldValue {
       case .positioning:
@@ -58,6 +59,7 @@ class CardFlipARView: ARView {
       self.flipTable = flipTable
       self.tableAdded = true
       flipTable.minimumBounds = [0.5,0.5]
+      self.status = .planeSearching
       self.scene.anchors.append(flipTable)
     } else {
       print("couldnt make flip table")
