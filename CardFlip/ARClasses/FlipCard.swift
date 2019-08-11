@@ -12,7 +12,7 @@ import Combine
 
 fileprivate extension UIColor {
   func toMaterial(isMetallic: Bool = false) -> Material {
-    return SimpleMaterial.init(color: self, isMetallic: isMetallic)
+    return SimpleMaterial(color: self, isMetallic: isMetallic)
   }
 }
 
@@ -36,7 +36,7 @@ class FlipCard: Entity, HasModel, HasCollision, HasCard {
       mesh: MeshResource.generatePlane(width: 1, depth: 1),
       materials: [color.toMaterial()]
     )
-    coloredFace.orientation = .init(angle: .pi, axis: [1,0,0])
+    coloredFace.orientation = simd_quatf(angle: .pi, axis: [1,0,0])
     coloredFace.position.y = -0.101
     self.addChild(coloredFace)
     self.components[ModelComponent] = ModelComponent(

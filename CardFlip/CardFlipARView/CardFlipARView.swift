@@ -18,10 +18,9 @@ struct GameData {
   }
 }
 
-class CardFlipARView: ARView {
+class CardFlipARView: ARView, ARSessionDelegate {
   let coachingOverlay = ARCoachingOverlayView()
   var tableAdded = false
-
 
   var status: GameStatus = .initCoaching {
     didSet {
@@ -48,6 +47,8 @@ class CardFlipARView: ARView {
   var confirmButton: ARButton?
   var installedGestures: [EntityGestureRecognizer] = []
 
+  var waitForAnchor: Cancellable?
+
   var gameData = GameData()
 
   /// Add the FlipTable object
@@ -60,6 +61,20 @@ class CardFlipARView: ARView {
       self.tableAdded = true
       flipTable.minimumBounds = [0.5,0.5]
       self.status = .planeSearching
+
+      // Subscribe to the AnchoredStateChanged event for flipTable
+      self.waitForAnchor = self.scene.subscribe(
+        to: SceneEvents.AnchoredStateChanged.self,
+        on: flipTable
+      ) { event in
+        if event.isAnchored {
+          self.status = .positioning
+          DispatchQueue.main.async {
+            self.waitForAnchor?.cancel()
+            self.waitForAnchor = nil
+          }
+        }
+      }
       self.scene.anchors.append(flipTable)
     } else {
       print("couldnt make flip table")
@@ -87,7 +102,7 @@ class CardFlipARView: ARView {
           size: CGSize(width: 2, height: 1)),
         alignment: .center,
         lineBreakMode: .byWordWrapping
-      ), materials: [SimpleMaterial.init(color: .yellow, isMetallic: true)]
+      ), materials: [SimpleMaterial(color: .yellow, isMetallic: true)]
     )
     finText.position.y = 1
     self.flipTable?.addChild(finText)

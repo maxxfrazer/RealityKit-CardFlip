@@ -43,7 +43,7 @@ class FlipTable: Entity, HasAnchoring, HasCollision {
 //      self.components[CollisionComponent] = CollisionComponent(shapes: [.generateBox(size: [1,0.3,1])])
       let maxDim = dimensions.max()
       let minBound = bounds.min()
-      self.scale = .init(repeating: minBound / Float(maxDim))
+      self.scale = SIMD3<Float>(repeating: minBound / Float(maxDim))
     }
   }
   init(dimensions: SIMD2<Int>) throws {
