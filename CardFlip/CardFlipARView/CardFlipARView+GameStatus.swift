@@ -30,9 +30,9 @@ extension CardFlipARView {
     guard let table = self.flipTable else {
       return
     }
-    table.components[CollisionComponent] = CollisionComponent(shapes: [.generateBox(size: [4, 0.4, 4])])
+    table.generateCollisionShapes(recursive: true)
     self.installedGestures.append(
-      contentsOf: self.installGestures([.translation, .rotation], for: table)
+      contentsOf: self.installGestures([.all], for: table)
     )
 
     // TODO: - Change the button, maybe change to 2D UIButton?

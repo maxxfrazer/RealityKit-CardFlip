@@ -16,7 +16,7 @@ class ARButton: Entity, HasCollision, HasModel, HasTap {
     super.init()
     self.model = model
     self.transform = transform
-    self.components[CollisionComponent] = CollisionComponent(shapes: [ShapeResource.generateSphere(radius: 0.4)])
+    self.generateCollisionShapes(recursive: true)
   }
 
   required init() {

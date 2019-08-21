@@ -95,7 +95,7 @@ class CardFlipARView: ARView, ARSessionDelegate {
     let finText = ModelEntity(
       mesh: .generateText(
         "Winner!",
-        extrusionDepth: 0.2,
+        extrusionDepth: 0.1,
         font: .systemFont(ofSize: 0.5),
         containerFrame: CGRect(
           origin: .zero,
