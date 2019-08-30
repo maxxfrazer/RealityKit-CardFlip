@@ -31,7 +31,7 @@ class FlipCard: Entity, HasModel, HasCollision, HasCard {
   /// - Parameter id: the input id is used for matching the card to an equal
   init(color: UIColor, id: Int) {
     super.init()
-    self.components[CardComponent] = CardComponent(id: id)
+    self.card = CardComponent(id: id)
     let coloredFace = ModelEntity(
       mesh: MeshResource.generatePlane(width: 1, depth: 1),
       materials: [color.toMaterial()]
@@ -39,10 +39,10 @@ class FlipCard: Entity, HasModel, HasCollision, HasCard {
     coloredFace.orientation = simd_quatf(angle: .pi, axis: [1,0,0])
     coloredFace.position.y = -0.101
     self.addChild(coloredFace)
-    self.components[ModelComponent] = ModelComponent(
+    self.model = ModelComponent(
       mesh: .generateBox(size: [1, 0.2, 1]),
       materials: [UIColor.gray.toMaterial()])
-    self.components[CollisionComponent] = CollisionComponent(
+    self.collision = CollisionComponent(
       shapes: [ShapeResource.generateBox(size: [1,0.2,1])]
     )
   }

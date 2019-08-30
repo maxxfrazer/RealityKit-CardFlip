@@ -2,7 +2,10 @@
 
 I've been using RealityKit a lot since it was released, and am writing Medium posts about different aspects of it as well as adding examples to this app.
 
-[For specific details of what's covered, check out my Medium](https://medium.com/@maxxfrazer/getting-started-with-realitykit-3b401d6f6f)
+[For specific details of what's covered, check out my Medium](https://medium.com/@maxxfrazer/getting-started-with-realitykit-3b401d6f6f).
+
+
+![CardFlip Example 1](media/CardFlip_Example1.gif)
 
 ----
 

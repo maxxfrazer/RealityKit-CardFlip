@@ -19,7 +19,7 @@ enum GameStatus {
 extension CardFlipARView {
 
   func changedFromPositioningStatus() {
-    self.flipTable?.components[CollisionComponent] = nil
+    self.flipTable?.collision = nil
     self.confirmButton?.removeFromParent()
     self.installedGestures = self.installedGestures.filter({ (recogniser) -> Bool in
       recogniser.isEnabled = false
@@ -30,7 +30,7 @@ extension CardFlipARView {
     guard let table = self.flipTable else {
       return
     }
-    table.generateCollisionShapes(recursive: true)
+    table.collision = CollisionComponent(shapes: [.generateBox(size: [4, 0.4, 4])])
     self.installedGestures.append(
       contentsOf: self.installGestures([.all], for: table)
     )

@@ -39,7 +39,7 @@ class FlipTable: Entity, HasAnchoring, HasCollision {
         minimumBounds: bounds)
       let anchorComponent = AnchoringComponent(anchorPlane)
 
-      self.components[AnchoringComponent] = anchorComponent
+      self.anchoring = anchorComponent
 //      self.components[CollisionComponent] = CollisionComponent(shapes: [.generateBox(size: [1,0.3,1])])
       let maxDim = dimensions.max()
       let minBound = bounds.min()
