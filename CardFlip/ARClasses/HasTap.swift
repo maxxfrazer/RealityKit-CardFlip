@@ -6,9 +6,8 @@
 //  Copyright © 2019 Max Cobb. All rights reserved.
 //
 
-import RealityKit
+import Foundation
 
 protocol HasTap {
   var tapAction: (() -> Void)? { get set }
 }
-

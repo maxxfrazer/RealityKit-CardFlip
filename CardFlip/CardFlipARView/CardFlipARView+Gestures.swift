@@ -71,6 +71,5 @@ extension CardFlipARView {
         cardFound()
       }
     }
-
   }
 }

@@ -6,12 +6,14 @@
 //  Copyright © 2019 Max Cobb. All rights reserved.
 //
 
-import Foundation
 import RealityKit
 import Combine
 
+/// Component to be added to all the FlipCards
 struct CardComponent: Component, Codable {
+  /// Is the card showing the underside
   var isRevealed = false
+  /// ID to use when checking if two cards match
   var id: Int
 }
 

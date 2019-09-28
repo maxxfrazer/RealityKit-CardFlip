@@ -14,6 +14,7 @@ enum FlipTableError: Error {
   case dimensionsTooLarge
 }
 
+/// FlipTable class contains all the cards in the game
 class FlipTable: Entity, HasAnchoring, HasCollision {
   static var availableColors: [UIColor] = [
     .red,
@@ -40,12 +41,15 @@ class FlipTable: Entity, HasAnchoring, HasCollision {
       let anchorComponent = AnchoringComponent(anchorPlane)
 
       self.anchoring = anchorComponent
-//      self.components[CollisionComponent] = CollisionComponent(shapes: [.generateBox(size: [1,0.3,1])])
+
       let maxDim = dimensions.max()
       let minBound = bounds.min()
       self.scale = SIMD3<Float>(repeating: minBound / Float(maxDim))
     }
   }
+
+  /// Create a new FlipTable Entity
+  /// - Parameter dimensions: How many cards across and deep do you want the game to be
   init(dimensions: SIMD2<Int>) throws {
     CardComponent.self.registerComponent()
     self.dimensions = dimensions
