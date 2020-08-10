@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FFED20124E1D8CA00B53CE7 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFED20024E1D8CA00B53CE7 /* CardComponent.swift */; };
+		5FFED20324E1D8D400B53CE7 /* HasTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFED20224E1D8D400B53CE7 /* HasTap.swift */; };
+		5FFED20524E1D8E000B53CE7 /* ARButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFED20424E1D8E000B53CE7 /* ARButton.swift */; };
 		F31E88DF22DFA6CE00E4B6A7 /* CardFlipARView+Coaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31E88DE22DFA6CE00E4B6A7 /* CardFlipARView+Coaching.swift */; };
 		F390D51022DE886A00D21945 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F390D50F22DE886A00D21945 /* AppDelegate.swift */; };
 		F390D51422DE886A00D21945 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F390D51322DE886A00D21945 /* ContentView.swift */; };
@@ -16,12 +19,9 @@
 		F390D52722DE886A00D21945 /* CardFlipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F390D52622DE886A00D21945 /* CardFlipTests.swift */; };
 		F390D54022DE88BA00D21945 /* FlipCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F390D53F22DE88BA00D21945 /* FlipCard.swift */; };
 		F390D54222DE8BF800D21945 /* FlipTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F390D54122DE8BF800D21945 /* FlipTable.swift */; };
-		F3C503C12319873800E0D682 /* HasTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38DF9BC22EDFFD500DC328A /* HasTap.swift */; };
 		F3CFE76C22DEA4000071C3AD /* CardFlipARView+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFE76B22DEA4000071C3AD /* CardFlipARView+Gestures.swift */; };
 		F3CFE77022DFA34E0071C3AD /* CardFlipARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFE76F22DFA34E0071C3AD /* CardFlipARView.swift */; };
 		F3DB095A22F2E24700EEBA05 /* CardFlipARView+GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DEC08D22F2E12A003EBC87 /* CardFlipARView+GameStatus.swift */; };
-		F3DB095C22F2E26000EEBA05 /* ARButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38DF9BE22EE020400DC328A /* ARButton.swift */; };
-		F3DB095D22F2E26300EEBA05 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A14222E996D200F529DB /* CardComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5FFED20024E1D8CA00B53CE7 /* CardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
+		5FFED20224E1D8D400B53CE7 /* HasTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasTap.swift; sourceTree = "<group>"; };
+		5FFED20424E1D8E000B53CE7 /* ARButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARButton.swift; sourceTree = "<group>"; };
 		F31E88DE22DFA6CE00E4B6A7 /* CardFlipARView+Coaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardFlipARView+Coaching.swift"; sourceTree = "<group>"; };
-		F38DF9BC22EDFFD500DC328A /* HasTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HasTap.swift; path = ../../../../../../../../System/Volumes/Data/Users/maxcobb/Documents/Code/Personal/CardFlip/CardFlip/ARClasses/HasTap.swift; sourceTree = "<group>"; };
-		F38DF9BE22EE020400DC328A /* ARButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARButton.swift; path = ../../../../../../../../System/Volumes/Data/Users/maxcobb/Documents/Code/Personal/CardFlip/CardFlip/ARClasses/ARButton.swift; sourceTree = "<group>"; };
 		F390D50C22DE886A00D21945 /* CardFlip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardFlip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F390D50F22DE886A00D21945 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F390D51322DE886A00D21945 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		F3CFE76B22DEA4000071C3AD /* CardFlipARView+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardFlipARView+Gestures.swift"; sourceTree = "<group>"; };
 		F3CFE76F22DFA34E0071C3AD /* CardFlipARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlipARView.swift; sourceTree = "<group>"; };
 		F3DEC08D22F2E12A003EBC87 /* CardFlipARView+GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardFlipARView+GameStatus.swift"; sourceTree = "<group>"; };
-		F3F5A14222E996D200F529DB /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardComponent.swift; path = ../../../../../../../../System/Volumes/Data/Users/maxcobb/Documents/Code/Personal/CardFlip/CardFlip/ARClasses/CardComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +78,10 @@
 			isa = PBXGroup;
 			children = (
 				F390D53F22DE88BA00D21945 /* FlipCard.swift */,
-				F38DF9BC22EDFFD500DC328A /* HasTap.swift */,
-				F38DF9BE22EE020400DC328A /* ARButton.swift */,
-				F3F5A14222E996D200F529DB /* CardComponent.swift */,
+				5FFED20024E1D8CA00B53CE7 /* CardComponent.swift */,
+				5FFED20224E1D8D400B53CE7 /* HasTap.swift */,
 				F390D54122DE8BF800D21945 /* FlipTable.swift */,
+				5FFED20424E1D8E000B53CE7 /* ARButton.swift */,
 			);
 			path = ARClasses;
 			sourceTree = "<group>";
@@ -248,15 +248,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3DB095D22F2E26300EEBA05 /* CardComponent.swift in Sources */,
-				F3DB095C22F2E26000EEBA05 /* ARButton.swift in Sources */,
+				5FFED20524E1D8E000B53CE7 /* ARButton.swift in Sources */,
+				5FFED20324E1D8D400B53CE7 /* HasTap.swift in Sources */,
 				F390D54022DE88BA00D21945 /* FlipCard.swift in Sources */,
-				F3C503C12319873800E0D682 /* HasTap.swift in Sources */,
 				F390D54222DE8BF800D21945 /* FlipTable.swift in Sources */,
 				F390D51022DE886A00D21945 /* AppDelegate.swift in Sources */,
 				F3CFE77022DFA34E0071C3AD /* CardFlipARView.swift in Sources */,
 				F3DB095A22F2E24700EEBA05 /* CardFlipARView+GameStatus.swift in Sources */,
 				F31E88DF22DFA6CE00E4B6A7 /* CardFlipARView+Coaching.swift in Sources */,
+				5FFED20124E1D8CA00B53CE7 /* CardComponent.swift in Sources */,
 				F3CFE76C22DEA4000071C3AD /* CardFlipARView+Gestures.swift in Sources */,
 				F390D51422DE886A00D21945 /* ContentView.swift in Sources */,
 			);
@@ -412,7 +412,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "CardFlip/Preview\\ Content";
-				DEVELOPMENT_TEAM = N2RTJDRM64;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CardFlip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -433,7 +433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "CardFlip/Preview\\ Content";
-				DEVELOPMENT_TEAM = N2RTJDRM64;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CardFlip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
